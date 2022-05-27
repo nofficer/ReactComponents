@@ -12,12 +12,12 @@ import {
 // import your route components too
 import './index.css'
 import Home from './components/admin/Home'
-import BasicForm from './components/forms/BasicForm'
+import FormHolder from './components/forms/FormHolder'
 import Navbar from './components/admin/Navbar'
 
 import Grid from '@mui/material/Grid';
 
-const pages = [{label:'Home',navLink:'/'}, {label:'Forms',navLink:'/BasicForm'}];
+const pages = [{label:'Home',navLink:'/'}, {label:'Forms',navLink:'/FormHolder'}];
 
 
 const root = ReactDOM.createRoot(
@@ -41,7 +41,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />}>
         </Route>
-        <Route path="/BasicForm" element={<BasicForm />}>
+        <Route path="/FormHolder" element={<FormHolder />}>
         </Route>
       </Routes>
     </BrowserRouter>
