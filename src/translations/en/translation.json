@@ -2,5 +2,14 @@
         "Home": "Home",
         "Form Holder": "Form Holder",
         "Forms":"Forms",
-        "Select Language": "Select Language"
+        "Select Language": "Select Language",
+        "Username" : "Username",
+        "Email" : "Email",
+        "Please Select a Role" : "Please Select a Role",
+        "Birth Date" : "Birth Date",
+        "Password": "Password",
+        "Level": "Level",
+        "Senior-Manager": "Senior-Manager",
+        "Manager": "Manager",
+        "Entry-Level": "Entry-Level"
     }

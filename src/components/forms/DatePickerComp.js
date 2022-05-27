@@ -4,13 +4,17 @@ import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
-export default function BasicDatePicker({label,value,setValue,error,helperText}) {
+
+
+
+export default function BasicDatePicker({label,value,setValue,error,helperText,fullWidth}) {
+  const locale = localStorage.getItem("i18nextLng")
   if(value===''){
     value = null
   }
 
   return (
-    <LocalizationProvider dateAdapter={AdapterMoment}>
+    <LocalizationProvider dateAdapter={AdapterMoment} locale={locale}>
       <DatePicker
         label={label}
         value={value}
@@ -20,7 +24,7 @@ export default function BasicDatePicker({label,value,setValue,error,helperText})
           }}
           setValue(val_obj);
         }}
-        renderInput={(params) => <TextField {...params}  error={error} helperText={helperText} />}
+        renderInput={(params) => <TextField {...params}  error={error} helperText={helperText} fullWidth={fullWidth}  />}
       />
     </LocalizationProvider>
   );

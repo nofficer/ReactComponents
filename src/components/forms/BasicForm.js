@@ -1,12 +1,12 @@
 import React , {useState,useEffect} from 'react'
-
-import { useTranslation } from 'react-i18next';
+import Grid from '@mui/material/Grid';
+import InputLabel from '@mui/material/InputLabel';
 
 import FormItem from './FormItem'
 
-const BasicForm = ({defaultValues={username:'Hello'},fields=[],validate}) => {
-  const { t, i18n } = useTranslation();
-  const [formValues, setFormValues] = useState(defaultValues)
+const BasicForm = ({fields=[],validate,itemsPerRow,itemAlignment,itemVerticalPadding,itemHorizontalPadding,formValues,setFormValues}) => {
+
+
 
   const [errors,setErrors] = useState({})
 
@@ -14,12 +14,15 @@ const BasicForm = ({defaultValues={username:'Hello'},fields=[],validate}) => {
   const renderField = (field) => {
     let defaultVal = ''
 
-    if(typeof(defaultValues[field.key]) !== 'undefined'){
-      defaultVal = defaultValues[field.key]
+    if(typeof(formValues[field.key]) !== 'undefined'){
+      defaultVal = formValues[field.key]
     }
 
     return(
+      <Grid key={field.key} style={{textAlign:itemAlignment,paddingTop:itemVerticalPadding,paddingRight:itemHorizontalPadding,paddingBottom:itemVerticalPadding,paddingLeft:itemHorizontalPadding}} item xs={12/itemsPerRow}>
+      {field.otherLabel ? <InputLabel>{field.otherLabel}</InputLabel> : null}
       <FormItem errors={errors} setErrors={setErrors} validate={validate} formValues={formValues} setFormValues={setFormValues} defaultVal={defaultVal} key={field.key} field={field} />
+      </Grid>
     )
 
 
@@ -33,11 +36,11 @@ const BasicForm = ({defaultValues={username:'Hello'},fields=[],validate}) => {
   }
 
   return (
-    <div>
+    <>
     {renderForm()}
 
 
-    </div>
+    </>
   )
 }
 

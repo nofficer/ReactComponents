@@ -2,5 +2,15 @@
         "Home": "Inicio",
         "Forms":"formularios",
         "Form Holder":"Titular de formulario",
-        "Select Language": "Seleccione El Idioma"
+        "Select Language": "Seleccione El Idioma",
+        "Username" : "Nombre De Usuario",
+        "Email" : "Correo electrónico",
+        "Please Select a Role" : "Por favor seleccione un rol",
+        "Birth Date" : "Fecha de nacimiento",
+        "Password": "Clave",
+        "Level": "Nivel",
+        "Senior-Manager": "Gerente senior",
+        "Manager": "Gerente",
+        "Entry-Level": "Nivel Básico"
+
     }
