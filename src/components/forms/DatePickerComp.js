@@ -14,7 +14,7 @@ export default function BasicDatePicker({label,value,setValue,error,helperText,f
   }
 
   return (
-    <LocalizationProvider dateAdapter={AdapterMoment} locale={locale}>
+    <LocalizationProvider dateAdapter={AdapterMoment} adapterLocale={locale}>
       <DatePicker
         label={label}
         value={value}

@@ -11,5 +11,6 @@
         "Level": "Level",
         "Senior-Manager": "Senior-Manager",
         "Manager": "Manager",
-        "Entry-Level": "Entry-Level"
+        "Entry-Level": "Entry-Level",
+        "Function": "Function"
     }

@@ -1,14 +1,19 @@
 import React , {useState,useEffect} from 'react'
 import Grid from '@mui/material/Grid';
 import InputLabel from '@mui/material/InputLabel';
-
+import Button from '@mui/material/Button';
 import FormItem from './FormItem'
 
-const BasicForm = ({fields=[],validate,itemsPerRow,itemAlignment,itemVerticalPadding,itemHorizontalPadding,formValues,setFormValues}) => {
+const BasicForm = ({fields=[],validate,itemsPerRow,itemAlignment,itemVerticalPadding,itemHorizontalPadding,formValues,setFormValues,submitFunc}) => {
 
 
 
   const [errors,setErrors] = useState({})
+
+  const handleSubmit = () => {
+
+    submitFunc(errors)
+  }
 
 
   const renderField = (field) => {
@@ -38,6 +43,9 @@ const BasicForm = ({fields=[],validate,itemsPerRow,itemAlignment,itemVerticalPad
   return (
     <>
     {renderForm()}
+    <Grid style={{textAlign:'center'}} item xs={12}>
+    <Button onClick={handleSubmit} color="inherit" variant="outlined">Submit</Button>
+    </Grid>
 
 
     </>

@@ -13,6 +13,7 @@ import {
 import './index.css'
 import Home from './components/admin/Home'
 import FormHolder from './components/forms/FormHolder'
+import DataTableHolder from './components/tables/DataTableHolder'
 import Navbar from './components/admin/Navbar'
 
 import Grid from '@mui/material/Grid';
@@ -42,6 +43,8 @@ root.render(
         <Route path="/" element={<Home />}>
         </Route>
         <Route path="/FormHolder" element={<FormHolder />}>
+        </Route>
+        <Route path="/DataTableHolder" element={<DataTableHolder />}>
         </Route>
       </Routes>
     </BrowserRouter>

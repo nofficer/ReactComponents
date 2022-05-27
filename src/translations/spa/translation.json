@@ -11,6 +11,6 @@
         "Level": "Nivel",
         "Senior-Manager": "Gerente senior",
         "Manager": "Gerente",
-        "Entry-Level": "Nivel Básico"
-
+        "Entry-Level": "Nivel Básico",
+        "Function":"Función"
     }

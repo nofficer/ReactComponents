@@ -14,15 +14,19 @@ const FormItem = ({field,defaultVal,formValues,setFormValues,validate,errors,set
   useEffect(()=> {
 
     if(typeof(errors[field.key]) !== 'undefined'){
+
       if(errors[field.key] !== '' && errors[field.key] !== null){
+
         setErrorStatus(true)
         setErrorText(errors[field.key])
       }
       else {
+
         setErrorStatus(false)
         setErrorText(errors[field.key])
       }
     }
+
 
   },[errors])
 
@@ -33,16 +37,23 @@ const FormItem = ({field,defaultVal,formValues,setFormValues,validate,errors,set
     obj[key] = e.target.value
     setFormValues({...formValues,...obj})
     let newErrorObj = {}
-    newErrorObj[field.key] = validate(e.target.value,field.key)
+    newErrorObj[field.key] = validate(e.target.value,field.key,field.required)
     setItemValue(e.target.value)
+
     setErrors({...errors,...newErrorObj})
+    // if(newErrorObj[field.key] === null){
+    //   let del_obj = errors
+    //   delete del_obj[field.key]
+    //   setErrors(del_obj)
+    // }
 
   }
 
 
   if(field.type === 'input'){
+
     return (
-        <TextField fullWidth={field.fullWidth} variant={field.variant} error={errorStatus} helperText={errorText} value={itemValue} onChange={changeField}  key={field.key} type={field.inputType} label={t(field.label)}/>
+        <TextField onBlur={changeField} fullWidth={field.fullWidth} variant={field.variant} error={errorStatus} helperText={errorText} value={itemValue} onChange={changeField}  key={field.key} type={field.inputType} label={t(field.label)}/>
     )
   }
   else if(field.type === 'date'){
@@ -58,7 +69,7 @@ const FormItem = ({field,defaultVal,formValues,setFormValues,validate,errors,set
             labelId={field.key}
             id={field.key}
             value={itemValue}
-            
+
             onChange={changeField}
             fullWidth={field.fullWidth}
           >
