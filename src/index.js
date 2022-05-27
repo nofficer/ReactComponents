@@ -1,17 +1,48 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from "react-dom/client";
+import './i18nextConf';
+import AdbIcon from '@mui/icons-material/Adb';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+// import your route components too
+import './index.css'
+import Home from './components/admin/Home'
+import BasicForm from './components/forms/BasicForm'
+import Navbar from './components/admin/Navbar'
+
+import Grid from '@mui/material/Grid';
+
+const pages = [{label:'Home',navLink:'/'}, {label:'Forms',navLink:'/BasicForm'}];
+
+
+const root = ReactDOM.createRoot(
+  document.getElementById("root")
 );
+root.render(
+  <Grid container>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+
+
+    <BrowserRouter>
+    <Navbar
+    smallIcon={<AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />}
+    icon={<AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />}
+    backgroundColor='black'
+    fontColor='white'
+    pages={pages}
+     />
+      <Routes>
+        <Route path="/" element={<Home />}>
+        </Route>
+        <Route path="/BasicForm" element={<BasicForm />}>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+
+  </Grid>
+);
