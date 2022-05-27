@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
-import LanguageSelect from './LanguageSelect'
+
 import SettingsIcon from '@mui/icons-material/Settings';
 
 import { useNavigate } from "react-router-dom";
@@ -21,7 +21,7 @@ import { useNavigate } from "react-router-dom";
 
 import { useTranslation } from 'react-i18next';
 
-const Navbar = ({backgroundColor,fontColor,pages,fontFamily,icon,smallIcon}) => {
+const Navbar = ({backgroundColor,fontColor,pages,fontFamily,icon,smallIcon,settingsMenu}) => {
   let navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -134,7 +134,7 @@ const Navbar = ({backgroundColor,fontColor,pages,fontFamily,icon,smallIcon}) => 
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-          <LanguageSelect color='white'/>
+          {settingsMenu}
 
           </Box>
         </Toolbar>

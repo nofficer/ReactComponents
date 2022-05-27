@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom/client";
 import './i18nextConf';
 import AdbIcon from '@mui/icons-material/Adb';
+import LanguageSelect from './components/admin/LanguageSelect'
 
 import {
   BrowserRouter,
@@ -35,6 +36,7 @@ root.render(
     backgroundColor='black'
     fontColor='white'
     pages={pages}
+    settingsMenu={<LanguageSelect color='white'/>}
      />
       <Routes>
         <Route path="/" element={<Home />}>
